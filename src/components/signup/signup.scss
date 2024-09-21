@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.signup{
+    .container{
+        @include flex($direction:column);
+        width: 80vw;
+        max-width: 600px;
+        h1{
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .textfield{
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+}

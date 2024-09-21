@@ -1,0 +1,8 @@
+@import '../public/assets/sass_init/mixins';
+@import '../public/assets/sass_init/reset';
+@import '../public/assets/sass_init/variables';
+
+body{
+    min-height: 100vh;
+    @include flex;
+}
