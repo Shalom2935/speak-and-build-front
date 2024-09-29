@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Paper, Typography } from '@mui/material';
-import './login.scss';
+import './Login.scss';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    // Logique pour créer un compte
-    console.log('Sign Up:', { email, password });
+    const response = await fetch('/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      const token = data.token;
+      console.log('Token:', token);
   };
 
   return (
-    <Container className='signup'>
+    <Container className='login'>
       <Paper className='container' elevation={3} style={{ padding: '20px', marginTop: '20px' }}>
-        <Typography variant="h1">Create account</Typography>
+        <Typography variant="h1">Log into your account</Typography>
         <TextField
           className='textfield'
           variant="outlined"
@@ -33,7 +41,7 @@ const Login = () => {
           size='small'
         />
         <Button variant="outlined" color="primary" onClick={handleLogin}>
-          Register
+          Login
         </Button>
       </Paper>
     </Container>

@@ -1,0 +1,33 @@
+@import '../../index.scss';
+
+.chatinput{
+    position: fixed;
+    bottom: 15px;
+    left: 100px;
+    textarea{
+        width: 50vw;
+        height: 80px;
+        border-radius: 15px;
+        resize: none;
+        overflow: hidden;
+        padding: 10px 20px;
+        font-family: inherit;
+        font-size: 15px;
+        &:focus{
+            outline: $brand;
+            border: solid 1px $brand;
+        }
+    }
+    &_sendicon{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        &:hover{
+            cursor: pointer;
+            background-color: $light;
+            border-radius: 100%;
+            padding: 7px 4px 7px 7px;
+            @include flex;
+        }
+    }
+}
